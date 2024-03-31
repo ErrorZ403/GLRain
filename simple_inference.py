@@ -8,6 +8,7 @@ from archs.derain_network import DerainNetwork
 parser = argparse.ArgumentParser()
 parser.add_argument("--img_dir" )
 parser.add_argument("--save_dir")
+parser.add_argument("--ckpt")
 
 args = parser.parse_args()
 
@@ -31,6 +32,7 @@ network = DerainNetwork(
 )
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
+network.load_state_dict(torch.load(args['ckpt']))
 network.to(device)
 
 for img in os.listdir(os.listdir(args['img_dir'])):
