@@ -2,7 +2,7 @@ import torch
 from torch.utils.data import Dataset
 
 import cv2
-from metrics_and_losses import get_random_crop
+from data.utils import get_random_crop
 import os
 
 from albumentations import Compose, Flip

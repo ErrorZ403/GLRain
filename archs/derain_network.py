@@ -1,5 +1,5 @@
-from RLFN import RLFN
-from Restormer import DTB
+from archs.RLFN import RLFN
+from archs.Restormer import DTB
 import torch
 import torch.nn as nn
 
